@@ -1,0 +1,131 @@
+:root {
+    --primary-color: #8e44ad;
+    --secondary-color: #95a5a6;
+    --success-color: #2ecc71;
+    --danger-color: #e74c3c;
+    --warning-color: #f39c12;
+    --info-color: #3498db;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+
+    --background-gradient-light: linear-gradient(to right, #a8c0ff, #d7a8ff);
+    --text-color-light: #2c3e50;
+    --card-bg-light: rgba(255, 255, 255, 0.8);
+    --border-color-light: #bdc3c7;
+
+    --background-gradient-dark: linear-gradient(to right, #2c3e50, #4a5568);
+    --text-color-dark: #ecf0f1;
+    --card-bg-dark: rgba(44, 62, 80, 0.8);
+    --border-color-dark: #7f8c8d;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background-gradient-light);
+    color: var(--text-color-light);
+    transition: background 0.5s ease, color 0.5s ease;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--info-color);
+    transform: translateY(-2px);
+}
+
+.card {
+    background-color: var(--card-bg-light);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+.form-control, .form-select {
+    background-color: var(--card-bg-light);
+    color: var(--text-color-light);
+    border: 1px solid var(--border-color-light);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: var(--card-bg-light);
+    color: var(--text-color-light);
+    box-shadow: 0 0 15px rgba(142, 68, 173, 0.5);
+}
+
+.btn {
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.table tbody tr {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: scale(1.02);
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background: var(--background-gradient-dark);
+    color: var(--text-color-dark);
+}
+
+body.dark-mode .navbar {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .card {
+    background-color: var(--card-bg-dark);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .card:hover {
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .form-control, body.dark-mode .form-select {
+    background-color: var(--card-bg-dark);
+    color: var(--text-color-dark);
+    border-color: var(--border-color-dark);
+}
+
+body.dark-mode .form-control:focus, body.dark-mode .form-select:focus {
+    background-color: var(--card-bg-dark);
+    color: var(--text-color-dark);
+}
+
+body.dark-mode .table {
+    color: var(--text-color-dark);
+}
+
+body.dark-mode .table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}

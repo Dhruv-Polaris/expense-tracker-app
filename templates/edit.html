@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="mb-0">Edit Expense</h1>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Title</label>
+                            <input type="text" class="form-control" name="title" id="title" value="{{ expense.title }}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Description</label>
+                            <textarea class="form-control" name="description" id="description" rows="3">{{ expense.description }}</textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Category</label>
+                            <select class="form-select" name="category" id="category">
+                                <option value="Food" {% if expense.category == 'Food' %}selected{% endif %}>Food</option>
+                                <option value="Travel" {% if expense.category == 'Travel' %}selected{% endif %}>Travel</option>
+                                <option value="Utilities" {% if expense.category == 'Utilities' %}selected{% endif %}>Utilities</option>
+                                <option value="Entertainment" {% if expense.category == 'Entertainment' %}selected{% endif %}>Entertainment</option>
+                                <option value="Other" {% if expense.category == 'Other' %}selected{% endif %}>Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="amount" class="form-label">Amount</label>
+                            <input type="number" class="form-control" name="amount" id="amount" value="{{ expense.amount }}" step="0.01" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="spent_on" class="form-label">Spent On</label>
+                            <input type="date" class="form-control" name="spent_on" id="spent_on" value="{{ expense.spent_on.strftime('%Y-%m-%d') }}" required>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
